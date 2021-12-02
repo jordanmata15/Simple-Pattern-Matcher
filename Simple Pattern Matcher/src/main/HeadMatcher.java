@@ -9,7 +9,7 @@ public class HeadMatcher extends CharacterMatcher {
 	
 	protected int validateString(String toParse) {
 		int startIndex = 0;
-		while(startIndex < toParse.length()) {
+		while(startIndex <= toParse.length()) {
 			if (this.nextMatcher.checkCharacter(toParse.substring(startIndex))) {
 				return startIndex;
 			}
