@@ -64,9 +64,9 @@ public class CharacterMatcher {
 		
 		switch(subRegex.charAt(0)) {
 			case '*':
-				return new MultipleWildcardMatcher(subRegex);
+				return new StarMatcher(subRegex);
 			case '.':
-				return new SingleWildcardMatcher(subRegex);
+				return new DotMatcher(subRegex);
 			default:
 				return new CharacterMatcher(subRegex);
 		}

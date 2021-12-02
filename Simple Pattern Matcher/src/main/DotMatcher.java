@@ -1,13 +1,13 @@
 package main;
 
 /**
- * MultipleWildCardMatcher object used to represent a '.' character in the 
+ * DotMatcher object used to represent a '.' character in the 
  * regular expression.
  * @author Jordan Mata
  * @date Dec 1, 2021
  *
  */
-public class SingleWildcardMatcher extends CharacterMatcher {
+public class DotMatcher extends CharacterMatcher {
 
 	/**
 	 * Use parent constructor to generate correct next CharacterMatcher type.
@@ -15,7 +15,7 @@ public class SingleWildcardMatcher extends CharacterMatcher {
 	 * 					the first character in the string for this Matcher object.
 	 * 					Assumes '.' and '*' are the only special characters.
 	 */
-	protected SingleWildcardMatcher(String regex){
+	protected DotMatcher(String regex){
 		super(regex);
 	}
 

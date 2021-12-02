@@ -1,13 +1,13 @@
 package main;
 
 /**
- * MultipleWildCardMatcher object used to represent a '*' character in the 
+ * StarMatcher object used to represent a '*' character in the 
  * regular expression.
  * @author Jordan Mata
  * @date Dec 1, 2021
  *
  */
-public class MultipleWildcardMatcher extends CharacterMatcher {
+public class StarMatcher extends CharacterMatcher {
 
 	/**
 	 * Use parent constructor to generate correct next CharacterMatcher type.
@@ -15,7 +15,7 @@ public class MultipleWildcardMatcher extends CharacterMatcher {
 	 * 					the first character in the string for this Matcher object.
 	 * 					Assumes '.' and '*' are the only special characters.
 	 */
-	protected MultipleWildcardMatcher(String regex){
+	protected StarMatcher(String regex){
 		super(regex);
 	}
 	
@@ -34,7 +34,7 @@ public class MultipleWildcardMatcher extends CharacterMatcher {
 		if (toParse.length() == 0)
 			return nextMatcher.checkCharacter(toParse);
 		while (toParse.length() > 0) {
-			if (nextMatcher.checkCharacter(toParse)) 
+			if (nextMatcher.checkCharacter(toParse))
 				return true;
 			else
 				toParse = toParse.substring(1);
