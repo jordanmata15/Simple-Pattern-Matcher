@@ -6,6 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import main.Match;
 
+/**
+ * Testing for the Match object.
+ * @author Jordan Mata
+ * @date Dec 1, 2021
+ *
+ */
 class MatchTester {
 	
 	@Test
