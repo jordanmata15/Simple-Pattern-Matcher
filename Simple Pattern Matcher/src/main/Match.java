@@ -8,15 +8,13 @@ package main;
  *
  */
 public class Match {
-	String regex;
-	HeadMatcher regexHead;
+	private HeadMatcher regexHead;
 	
 	/**
 	 * Constructor for the regular expression. 
 	 * @param regex - String representation of the regular expression.
 	 */
 	public Match(String regex) {
-		this.regex = regex;
 		this.regexHead = new HeadMatcher(regex);
 	}
 	

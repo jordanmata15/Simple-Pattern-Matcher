@@ -8,9 +8,9 @@ package main;
  *
  */
 public class CharacterMatcher {
-	char currentCharacter;
-	CharacterMatcher nextMatcher;
-	String regex;
+	protected char currentCharacter;
+	protected CharacterMatcher nextMatcher;
+	protected String regex;
 	
 	protected CharacterMatcher() {}
 	
