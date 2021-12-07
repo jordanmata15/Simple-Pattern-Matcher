@@ -24,14 +24,14 @@ public class HeadMatcher extends CharacterMatcher {
 	/**
 	 * Begins the validation process of the passed in string to our regular
 	 * expression. Validates the check starting point incrementally.
-	 * @param toParse - String to be validated.
+	 * @param toMatch - String to be validated.
 	 * @return	The integer index of the first matching substring. If no 
 	 * 			matching substring found, returns -1.
 	 */
-	protected int validateString(String toParse) {
+	protected int validateString(String toMatch) {
 		int startIndex = 0;
-		while(startIndex <= toParse.length()) {
-			String nextSubstring = toParse.substring(startIndex);
+		while(startIndex <= toMatch.length()) {
+			String nextSubstring = toMatch.substring(startIndex);
 			if (this.nextMatcher.checkCharacter(nextSubstring)) {
 				return startIndex;
 			}
@@ -44,12 +44,12 @@ public class HeadMatcher extends CharacterMatcher {
 	/**
 	 * Validates if the passed in string matches the regular expression
 	 * represented by the chain of CharacterMatchers.
-	 * @param toParse - String to be validated.
+	 * @param toMatch - String to be validated.
 	 * @return	True if all successive matchers return true on their 
 	 * 			validated substrings. False otherwise.
 	 */
 	@Override
-	protected boolean checkCharacter(String toParse) {
-		return this.nextMatcher.checkCharacter(toParse);
+	protected boolean checkCharacter(String toMatch) {
+		return this.nextMatcher.checkCharacter(toMatch);
 	}
 }

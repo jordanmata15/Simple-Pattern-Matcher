@@ -33,17 +33,17 @@ public class CharacterMatcher {
 	 * character held in this character matcher. Passes the substring 
 	 * beginning at index 1 to the next character matcher for it to validate
 	 * the rest of the string.
-	 * @param toParse - String to be validated.
+	 * @param toMatch - String to be validated.
 	 * @return 	True if first character of toParse matches the character held
 	 * 			in this matcher and all successive matchers also return true
 	 * 			on their validated substrings. False otherwise.
 	 */
-	protected boolean checkCharacter(String toParse) {
-		if (toParse.length() == 0) 
+	protected boolean checkCharacter(String toMatch) {
+		if (toMatch.length() == 0) 
 			return false;
-		else if (this.currentCharacter == toParse.charAt(0)) {
-			String restOfString = toParse.substring(1);
-			return this.nextMatcher.checkCharacter(restOfString);
+		else if (this.currentCharacter == toMatch.charAt(0)) {
+			String stringSuffix = toMatch.substring(1);
+			return this.nextMatcher.checkCharacter(stringSuffix);
 		}
 		else	
 			return false;

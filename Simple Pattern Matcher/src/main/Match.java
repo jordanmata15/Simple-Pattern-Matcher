@@ -21,12 +21,12 @@ public class Match {
 	/**
 	 * Used to find the first index where a string matches the 
 	 * regular expression represented by this Match object.
-	 * @param toParse - String to validate against.
+	 * @param toMatch - String to validate against.
 	 * @return	True if the passed in string can be represented
 	 * 			by the regular expression (assuming only '.' and
 	 * 			'*' as special characters).
 	 */
-	public int findFirstInd(String toParse) {
-		return this.regexHead.validateString(toParse);
+	public int findFirstInd(String toMatch) {
+		return this.regexHead.validateString(toMatch);
 	}
 }

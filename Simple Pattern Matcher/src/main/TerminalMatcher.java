@@ -15,11 +15,11 @@ public class TerminalMatcher extends CharacterMatcher {
 	 * Overridden method designed to act as an indicator that the string
 	 * matches completely. If the matching chain reaches this matcher,
 	 * then all other conditions of the regular expression hold/match.
-	 * @param toParse - String to be validated.
+	 * @param toMatch - String to be validated.
 	 * @return	True.
 	 */
 	@Override
-	protected boolean checkCharacter(String toParse) {
+	protected boolean checkCharacter(String toMatch) {
 		return true;
 	}
 }

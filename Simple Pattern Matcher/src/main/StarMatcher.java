@@ -25,19 +25,19 @@ public class StarMatcher extends CharacterMatcher {
 	 * beginning at index 0,1,2,...,(length of the string) to the next character 
 	 * matcher for it to validate the rest of the string. This allows it to check
 	 * if any of them match.
-	 * @param toParse - String to be validated.
+	 * @param toMatch - String to be validated.
 	 * @return 	True if first character of toParse matches the character held
 	 * 			in this matcher and all successive matchers also return true
 	 * 			on their validated substrings. False otherwise.
 	 */
-	protected boolean checkCharacter(String toParse) {
-		if (toParse.length() == 0)
-			return nextMatcher.checkCharacter(toParse);
-		while (toParse.length() > 0) {
-			if (nextMatcher.checkCharacter(toParse))
+	protected boolean checkCharacter(String toMatch) {
+		if (toMatch.length() == 0)
+			return nextMatcher.checkCharacter(toMatch);
+		while (toMatch.length() > 0) {
+			if (nextMatcher.checkCharacter(toMatch))
 				return true;
 			else
-				toParse = toParse.substring(1);
+				toMatch = toMatch.substring(1);
 		}
 		return false;
 	}

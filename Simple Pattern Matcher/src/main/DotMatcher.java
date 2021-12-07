@@ -23,18 +23,18 @@ public class DotMatcher extends CharacterMatcher {
 	 * Validates that this character is any character. Passes the substring 
 	 * beginning at index 1 to the next character matcher for it to validate
 	 * the rest of the string.
-	 * @param toParse - String to be validated.
+	 * @param toMatch - String to be validated.
 	 * @return 	True if first character of toParse matches the character held
 	 * 			in this matcher and all successive matchers also return true
 	 * 			on their validated substrings. False otherwise.
 	 */
 	@Override
-	protected boolean checkCharacter(String toParse) {
-		if (toParse.length() == 0) 
+	protected boolean checkCharacter(String toMatch) {
+		if (toMatch.length() == 0) 
 			return false;
 		else {
-			String restOfString = toParse.substring(1);
-			return this.nextMatcher.checkCharacter(restOfString);
+			String stringSuffix = toMatch.substring(1);
+			return this.nextMatcher.checkCharacter(stringSuffix);
 		}
 	}
 }
