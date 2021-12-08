@@ -30,7 +30,7 @@ public class HeadMatcher extends CharacterMatcher {
 	 */
 	protected int validateString(String toMatch) {
 		int startIndex = 0;
-		while(startIndex <= toMatch.length()) {
+		while(startIndex < toMatch.length()) {
 			String nextSubstring = toMatch.substring(startIndex);
 			if (this.nextMatcher.checkCharacter(nextSubstring)) {
 				return startIndex;

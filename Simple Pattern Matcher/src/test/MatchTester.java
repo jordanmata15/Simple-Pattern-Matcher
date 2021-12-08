@@ -154,7 +154,7 @@ class MatchTester {
 		assertEquals(0, starOnlyMatcher.findFirstInd("*"));
 		assertEquals(0, starOnlyMatcher.findFirstInd(".."));
 		assertEquals(0, starOnlyMatcher.findFirstInd("Any 1 possible string!"));
-		assertEquals(0, starOnlyMatcher.findFirstInd(""));
+		assertEquals(-1, starOnlyMatcher.findFirstInd(""));
 
 		Match starMatcher = new Match("*a*b");
 		assertEquals(0, starMatcher.findFirstInd("aabb"));
